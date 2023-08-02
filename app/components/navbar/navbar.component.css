@@ -1,0 +1,15 @@
+.font-style {
+  font-family: Copperplate Gothic Light;
+}
+
+.mat-toolbar{
+  background-color: #ec6371;
+}
+
+.font-style:hover{
+  color: yellow;
+}
+
+.mat-icon:hover{
+  color:yellow
+}

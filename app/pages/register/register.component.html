@@ -1,0 +1,92 @@
+<app-navbar></app-navbar>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 0;">
+            <div class="col-md-6 offset-md-3">
+<!-- Material design card element provided by Angular Material -->
+                <mat-card style="background-color: rgba(255,255,255,0.8);">
+                    <mat-card-content>
+                        <h1 class="text-center" style="font-family: Copperplate Gothic Light;">Get Started with
+                            Registration</h1>
+<!-- i)the ngSubmit directive is used to trigger the formSubmit() method when the form is  submitted ii)Material design form field contains an input field for the user to enter the Username. It uses two way binding [(ngModel)] to bind the 'Username' property  -->                             
+                        <form (ngSubmit)="formSubmit()">
+                            <!-- username -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input required [(ngModel)]="user.loginId" name="username" matInput
+                                    placeholder="Enter Here">
+                            </mat-form-field>
+                            <!-- first name -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>First Name</mat-label>
+                                <input required [(ngModel)]="user.firstName" name="firstName" matInput
+                                    placeholder="Enter Here">
+                            </mat-form-field>
+                            <!-- last name -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Last Name</mat-label>
+                                <input required [(ngModel)]="user.lastName" name="lastName" matInput
+                                    placeholder="Enter Here">
+                            </mat-form-field>
+                            <!-- role -->
+                            <br>
+                            <label> Select Role </label>
+                            <br>
+<!-- ngMOdel is a two-way binding using Angular's 'ngModel' directive.It binds the state of the checkbox to the 'admin' property of the 'user' object in the component-->
+                            <mat-checkbox [(ngModel)]="user.admin" name="admin">Admin</mat-checkbox>
+                            <mat-checkbox [(ngModel)]="user.users" style="margin-right: 50px;" name="user">User
+                            </mat-checkbox>
+                            <!-- email -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>E mail</mat-label>
+                                <input required [(ngModel)]="user.email" name="email" type="email" matInput
+                                    placeholder="Enter E-Mail">
+                            </mat-form-field>
+                            <!-- contact Number -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Contact Number</mat-label>
+                                <input required [(ngModel)]="user.contactNumber" name="contactNumber" type="number"
+                                    minlength="10" matInput placeholder="Enter Number">
+                            </mat-form-field>
+                            <!-- password -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input required [(ngModel)]="user.password" name="password"
+                                    type="{{ showPassword ? 'text' : 'password' }}" minlength="6" matInput
+                                    placeholder="Enter Password">
+                                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+<!-- this is a icon element<i> and ngClass based on the value of showPassword . if it's true then fa-eye-slash(hidden password) otherwise fa-eye(visible passsword) -->
+                                    <i class="fa" [ngClass]="showPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                                </button>
+                            </mat-form-field>
+
+                            <!-- Confirm Passwor -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Confirm Password</mat-label>
+                                <input required [(ngModel)]="user.confirmPassword" name="confirmPassword"
+                                    type="{{ showConfirmPassword ? 'text' : 'password' }}" minlength="6" matInput
+                                    placeholder="Enter Confirm Password">
+                                <button mat-icon-button matSuffix (click)="toggleConfirmPasswordVisibility()">
+                                    <i class="fa" [ngClass]="showConfirmPassword ? 'fa-eye-slash' : 'fa-eye'"></i>
+                                </button>
+                            </mat-form-field>
+<!-- the submit button triggers the form submission when clicked,and the reset button resets the form fields to their initial values -->
+                            <div class="container text-center">
+                                <button type="submit" style="margin-right: 10%; background-color: #ec6371" mat-raised-button
+                                    color="primary">Register</button>
+                                <button type="reset" style="margin-left: 10%; background-color: #ec6371" mat-raised-button
+                                    color="accent">Reset</button>
+
+                            </div>
+                            <br>
+                            <div style="text-align: center;">
+                                If Already User then ...
+                                <a href="api/v1.0/moviebooking/login">Login</a>
+                            </div>
+                        </form>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

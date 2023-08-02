@@ -1,0 +1,43 @@
+<app-navbar></app-navbar>
+<div class="bootstrap-wrapper">
+    <div class="container">
+        <div class="row" style="margin-top: 0;">
+            <div class="col-md-6 offset-md-3">
+                <mat-card style="background-color: rgba(255,255,255,0.8);">
+                    <mat-card-content>
+                        <h1 class="font-style">Login Here</h1>
+                        <form (ngSubmit)="formSubmit()">
+                            <!-- username -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Username</mat-label>
+                                <input required [(ngModel)]="user.loginId" name="username" matInput
+                                    placeholder="Enter Here">
+                            </mat-form-field>
+                            <!-- password -->
+                            <mat-form-field class="full-width" appearance="outline">
+                                <mat-label>Password</mat-label>
+                                <input required [(ngModel)]="user.password" name="password"
+                                    [type]="isPasswordVisible ? 'text' : 'password'" minlength="6" matInput
+                                    placeholder="Enter Password">
+                                <button mat-icon-button matSuffix (click)="togglePasswordVisibility()">
+                                    <span class="fa" [ngClass]="isPasswordVisible ? 'fa-eye-slash' : 'fa-eye'"></span>
+                                </button>
+                            </mat-form-field>
+                            <div class="container text-center">
+                                <button type="submit" style="margin-right: 10px; background-color: #ec6371" mat-raised-button color="primary">
+                                    Login
+                                </button>
+                            </div>
+                        </form>
+                        <br />
+                        <br />
+                        <div class="full-width" style="text-align: center;">
+                            <label>If you are new then </label>
+                            <a href='/api/v1.0/moviebooking/register'>register</a>
+                        </div>
+                    </mat-card-content>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

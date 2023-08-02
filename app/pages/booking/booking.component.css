@@ -1,0 +1,22 @@
+.full-width{
+    width: 100%;
+}
+.green {
+    background-color: green;
+}
+label {
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: block;
+    padding: auto;;
+  }
+
+  .bootstrap-wrapper{
+    background-image: url("/assets/images/theatre.jpg");
+    background-size: cover;
+    background-size: 100% 100%;
+    width: 1290px;
+    height: 550px;
+}  

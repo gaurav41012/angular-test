@@ -1,0 +1,27 @@
+<app-navbar></app-navbar>
+<h1 class="font-style" style="text-align: center;">All Movies</h1>
+<table style="padding-top: 20px; width: 100%;font-size: 20px;background-color: rgba(255,255,255,0.8);" class="mat-elevation-z8">
+    <tr style="border: 20px;">
+        <td><h2>No.</h2></td>
+        <td><h2>Movie Name</h2></td>
+        <td><h2>Theater Name</h2></td>
+        <td><h2>Ticket Status</h2></td>
+    </tr>
+<!-- the mat-divider is likely a custom Angular component used to create dividers. -->
+    <tr style="border: 12px;">
+        <td><mat-divider></mat-divider></td>
+        <td><mat-divider></mat-divider></td>
+        <td><mat-divider></mat-divider></td>
+        <td><mat-divider></mat-divider></td>
+    </tr>
+    <br>
+<!-- ngFor directive that loops through the movies array and generates a table row for each movie in the array -->
+    <tr *ngFor="let arr of movies">
+        <td class="font-style">{{arr.position}}</td>
+        <td class="font-style">{{arr.movieName}}</td>
+        <td class="font-style">{{arr.theaterName}}</td>
+        <td class="font-style">{{arr.ticketStatus}}</td>
+         <button *ngIf="loginService.userLoggedIn()" (click)="onClickBuyTicket(arr.movieName)" mat-raised-button color="primary">Book Ticket</button> <!--when the user is logged in -->
+    </tr>
+    <br>
+</table>

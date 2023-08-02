@@ -1,0 +1,19 @@
+<app-navbar></app-navbar>
+<br>
+<h1 style="text-align: center;font-family: Copperplate Gothic Light;"><b>Welcome to Movie Booking App</b></h1>
+<div class="bg">
+    <div class="bootstrap-wrapper">
+        <div class="container">
+            <div style="margin-top: 30px;">
+                 <div style="justify-content: center;text-align: center;"> <!--justify-content:horizontal -->               
+                    <button  *ngIf="!loginService.adminLoggedIn() && !loginService.userLoggedIn()" style="margin-right: 30px; margin-top: 30px; background-color: #ec6371" (click)='register()' class="hover-effect" 
+                    mat-raised-button color="primary" 
+                    >Register</button>
+                    <!-- this is a conditional statements if both are false then it's visible -->
+                    <button *ngIf="!loginService.adminLoggedIn() && !loginService.userLoggedIn()" style="margin-right: 30px;margin-top: 30px; background-color: #ec6371;" (click)='login()' class="hover-effect" mat-raised-button color="primary">Login</button>  
+                   
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
